@@ -22,7 +22,7 @@ pub fn build(b: *std.Build) void {
     const md2html_mod = b.addModule("md2html", .{
         .root_source_file = b.path("src/convert.zig"),
         .target = target,
-        .optimize = .ReleaseFast,
+        .optimize = optimize,
     });
 
     exe.root_module.addImport("md2html", md2html_mod);
